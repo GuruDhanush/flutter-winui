@@ -5,12 +5,14 @@ pool:
   vmImage: 'ubuntu-16.04'
 steps:
   - script: |
-      git clone -b master https://github.com/flutter/flutter.git $BUILD_SOURCESDIRECTORY/../flutter
-      export PATH=$PATH:$BUILD_SOURCESDIRECTORY/../flutter/bin
+      #git clone -b master https://github.com/flutter/flutter.git $BUILD_SOURCESDIRECTORY/../flutter
+      #export PATH=$PATH:$BUILD_SOURCESDIRECTORY/../flutter/bin
       export ENABLE_FLUTTER_DESKTOP=true
     displayName: 'Setup enviornment'
   - script: |
+      ls
       cd $BUILD_REPOSITORYNAME
+      ls
       $BUILD_SOURCESDIRECTORY/../flutter/bin/flutter packages get
     displayName: 'Install dependencies'
   - script: 
