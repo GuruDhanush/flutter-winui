@@ -53,7 +53,7 @@ class _HyperLinkButtonState extends State<HyperLinkButton>
       behavior: HitTestBehavior.opaque,
       child: Semantics(
         button: true,
-        child: ConstrainedBox(),
+        child: Container(),
       ),
     );
   }
