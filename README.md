@@ -1,6 +1,6 @@
 # Flutter Windows UI toolkit
 
-[![Build Status](https://travis-ci.org/GuruDhanush/flutter-winui.svg?branch=master)](https://travis-ci.org/GuruDhanush/flutter-winui)
+[![Build Status](https://dev.azure.com/guruzoho/flutter-winui/_apis/build/status/GuruDhanush.flutter-winui?branchName=master)](https://dev.azure.com/guruzoho/flutter-winui/_build/latest?definitionId=1&branchName=master)
 
 UWP controls for use in flutter. 
 
