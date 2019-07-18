@@ -6,8 +6,8 @@ pool:
 steps:
   - script: |
       git clone -b master https://github.com/flutter/flutter.git $BUILD_SOURCESDIRECTORY/../flutter
-      export PATH=$PATH:$TRAVIS_BUILD_DIR/../flutter/bin
-      export PATH=$PATH:$TRAVIS_BUILD_DIR/../flutter/bin
+      export PATH=$PATH:$BUILD_SOURCESDIRECTORY/../flutter/bin
+      export ENABLE_FLUTTER_DESKTOP=true
     displayName: 'Setup enviornment'
   - script: |
       cd $BUILD_REPOSITORYNAME
