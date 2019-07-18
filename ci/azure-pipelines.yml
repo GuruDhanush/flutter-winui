@@ -11,7 +11,7 @@ steps:
     displayName: 'Setup enviornment'
   - script: |
       ls
-      cd $BUILD_REPOSITORYNAME
+      #cd $BUILD_REPOSITORYNAME
       ls
       $BUILD_SOURCESDIRECTORY/../flutter/bin/flutter packages get
     displayName: 'Install dependencies'
