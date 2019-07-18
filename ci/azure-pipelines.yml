@@ -6,8 +6,6 @@ pool:
 steps:
   - script: |
       git clone -b master https://github.com/flutter/flutter.git $BUILD_SOURCESDIRECTORY/../flutter
-      #set PATH=%PATH%;$BUILD_SOURCESDIRECTORY/../flutter/bin
-      #set ENABLE_FLUTTER_DESKTOP=true
     displayName: 'Setup enviornment'
   - script: |
       $BUILD_SOURCESDIRECTORY/../flutter/bin/flutter packages get
