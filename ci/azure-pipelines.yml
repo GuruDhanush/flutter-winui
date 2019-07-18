@@ -1,0 +1,18 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-16.04'
+steps:
+  - script: |
+      git clone -b master https://github.com/flutter/flutter.git $BUILD_SOURCESDIRECTORY/../flutter
+      export PATH=$PATH:$TRAVIS_BUILD_DIR/../flutter/bin
+      export PATH=$PATH:$TRAVIS_BUILD_DIR/../flutter/bin
+    displayName: 'Setup enviornment'
+  - script: |
+      cd $BUILD_REPOSITORYNAME
+      flutter packages get
+    displayName: 'Install dependencies'
+  - script: 
+      flutter build -v linux --debug
+    displayName: 'Build'
