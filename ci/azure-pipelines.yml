@@ -11,8 +11,8 @@ steps:
     displayName: 'Setup enviornment'
   - script: |
       cd $BUILD_REPOSITORYNAME
-      flutter packages get
+      $BUILD_SOURCESDIRECTORY/../flutter/bin/flutter packages get
     displayName: 'Install dependencies'
   - script: 
-      flutter build -v linux --debug
+      $BUILD_SOURCESDIRECTORY/../flutter/bin/flutter build -v linux --debug
     displayName: 'Build'
