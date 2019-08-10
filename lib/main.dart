@@ -12,13 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import 'package:example_flutter/basic/navigation.dart';
 import 'package:example_flutter/example/checkboxgroup.dart' as prefix0;
 import 'package:example_flutter/example/radiogroup.dart';
 import 'package:example_flutter/example/uwptyperamp.dart';
+import 'package:example_flutter/fluenticons.dart';
 import 'package:flutter/foundation.dart'
     show debugDefaultTargetPlatformOverride;
 import 'package:flutter/material.dart';
 import 'splitpane.dart';
+import 'basic/navigation.dart';
 
 void main() {
   // See https://github.com/flutter/flutter/wiki/Desktop-shells#target-platform-override
@@ -30,24 +33,22 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-   return MaterialApp(
+    return MaterialApp(
       title: 'Flutters Demos',
       theme: ThemeData(
         accentColor: Colors.yellow,
         backgroundColor: Colors.white,
         primarySwatch: Colors.blue,
         textTheme: Theme.of(context).textTheme.copyWith(
-          button: TextStyle(
-            decoration: TextDecoration.none,
-            fontSize: 16.0,
-            fontWeight: FontWeight.w400
-          ),
-          subhead: TextStyle(
-            decoration: TextDecoration.none,
-            fontSize: 18.0,
-            fontWeight: FontWeight.w400,
-          )
-        ),
+            button: TextStyle(
+                decoration: TextDecoration.none,
+                fontSize: 16.0,
+                fontWeight: FontWeight.w400),
+            subhead: TextStyle(
+              decoration: TextDecoration.none,
+              fontSize: 18.0,
+              fontWeight: FontWeight.w400,
+            )),
         // See https://github.com/flutter/flutter/wiki/Desktop-shells#fonts
         fontFamily: 'Segoe',
       ),
@@ -65,8 +66,10 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage>
+    with SingleTickerProviderStateMixin {
   int _counter = 1;
+  AnimationController controller;
 
   void _incrementCounter() {
     setState(() {
@@ -74,26 +77,31 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  @override
+  void initState() {
+    controller =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 300));
+  }
+
+  @override
+  void dispose() {
+    controller?.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-
     final mqData = MediaQuery.of(context);
-    //print(mqData.devicePixelRatio);
-    return Material(
-      child: Scaffold(
+    
+
+    return Scaffold(
         body: MediaQuery(
-          data: mqData.copyWith(
-            textScaleFactor: mqData.textScaleFactor * 1.25,
-            //devicePixelRatio: mqData.devicePixelRatio * 0.75
-          ),
-          child: SplitPane()
-          //child: RadioGroup(),
-        ),
-        //body: UWPTypeRamp(),
-        //body: SplitPane(),
+      data: mqData.copyWith( 
+        textScaleFactor: mqData.textScaleFactor * 1.25,
       ),
-    );
+      child: SplitPane()
+    ));
   }
 }
- 
+
+

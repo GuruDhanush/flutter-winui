@@ -12,6 +12,10 @@ class UWPTypeRamp extends StatelessWidget {
     return MediaQuery(
       data: mqData.copyWith(textScaleFactor: mqData.textScaleFactor * 1.25),
       child: Container(
+        constraints: BoxConstraints(
+          minHeight: 200.0,
+          maxHeight: 500.0
+        ),
           child: ListView(
         padding: EdgeInsets.all(10.0),
         children: <Widget>[

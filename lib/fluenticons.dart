@@ -10,4 +10,6 @@ class FluentIcons {
   static const IconData settings = IconData(0xE713, fontFamily: 'SegoeIcons');
   static const IconData checkboxcomposite = IconData(0xE73A, fontFamily: 'SegoeIcons');
   static const IconData radiobtnon = IconData(0xECCB, fontFamily: 'SegoeIcons');
+  static const IconData chevrondown = IconData(0xE70D, fontFamily: 'SegoeIcons');
+  
 }

@@ -121,3 +121,25 @@ class FluentTextTheme {
 
 
 }
+
+
+class ListTheme {
+
+  static Color ListLow = Color(0x19000000);
+  static Color ListMedium = Color(0x33000000);
+}
+
+class ThemeColor {
+
+  static Color baseLow = Color(0x33000000);
+
+  ///disabled UI
+  static Color baseMediumLow = Color(0x66000000);
+
+  ///secondary text
+  static Color baseMedium = Color(0x99000000);
+  static Color baseMediumHigh = Color(0xCC000000);
+
+  ///primary text
+  static Color baseHigh = Color(0xFF000000);
+}

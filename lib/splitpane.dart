@@ -5,6 +5,7 @@ import 'package:example_flutter/basic/button.dart';
 import 'package:example_flutter/comboboxroute.dart';
 import 'package:example_flutter/example/buttongroup.dart';
 import 'package:example_flutter/example/checkboxgroup.dart';
+import 'package:example_flutter/example/comboboxgroup.dart';
 import 'package:example_flutter/example/radiogroup.dart';
 import 'package:example_flutter/example/uwptyperamp.dart';
 import 'package:example_flutter/fluenticons.dart';
@@ -90,7 +91,7 @@ class _SplitPaneState extends State<SplitPane>
   final GlobalKey _flyoutKey = GlobalKey();
   final FocusNode focusNode = FocusNode();
 
-  int pageNum = 4;
+  int pageNum = 5;
 
   void _changePage(int page) {
     //times =  0;
@@ -126,6 +127,8 @@ class _SplitPaneState extends State<SplitPane>
         return RadioGroup();
       case 4:
         return ButtonGroup();
+      case 5:
+        return ComboBoxGroup();
       default:
         return Center(
           child: Text(
@@ -190,6 +193,14 @@ class _SplitPaneState extends State<SplitPane>
                   ),
                   leading: Icon(FluentIcons.megaphone),
                   onTap: () => _changePage(4),
+                ),
+                FluentListTile(
+                  title: Text(
+                    'Combo Box',
+                    style: theme.body,
+                  ),
+                  leading: Icon(FluentIcons.megaphone),
+                  onTap: () => _changePage(5),
                 )
               ],
             ),
@@ -210,7 +221,15 @@ class _SplitPaneState extends State<SplitPane>
 
     //_controller.forward();
     Widget outerChild = Container(
-        color: Colors.white, margin: EdgeInsets.all(20.0), child: currentPage);
+        color: Colors.white, margin: EdgeInsets.all(20.0), 
+        child: SingleChildScrollView(
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minHeight: MediaQuery.of(context).size.height - 50,
+                    ),
+                    child: currentPage
+                  ))
+    );
     // Center(
     //   child: new Column(
     //     children: <Widget>[
