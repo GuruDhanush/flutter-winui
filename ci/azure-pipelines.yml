@@ -10,6 +10,9 @@ steps:
   - script: |
       $BUILD_SOURCESDIRECTORY/../flutter/bin/flutter packages get
     displayName: 'Install dependencies'
+  - script:  |
+      $BUILD_SOURCESDIRECTORY/../flutter/bin/flutter config --enable-windows-desktop
+    displayName: 'Enable flutter desktop support'
   - script: 
       $BUILD_SOURCESDIRECTORY/../flutter/bin/flutter build -v windows --debug
     displayName: 'Build'
