@@ -1,0 +1,14 @@
+.atom/
+.idea
+.vscode/
+.packages
+.pub/
+android/
+build/
+ios/
+packages
+.flutter-plugins
+windows/
+macos/
+.dart_tool/
+pubspec.lock
