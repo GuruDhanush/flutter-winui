@@ -11,8 +11,17 @@ steps:
       $BUILD_SOURCESDIRECTORY/../flutter/bin/flutter packages get
     displayName: 'Install dependencies'
   - script:  |
-      $BUILD_SOURCESDIRECTORY/../flutter/bin/flutter config --enable-windows-desktop
-    displayName: 'Enable flutter desktop support'
-  - script: 
-      $BUILD_SOURCESDIRECTORY/../flutter/bin/flutter build -v windows --debug
+      $BUILD_SOURCESDIRECTORY/../flutter/bin/flutter config --enable-web
+    displayName: 'Enable web support'
+  - script:  |
+      $BUILD_SOURCESDIRECTORY/../flutter/bin/flutter build web
     displayName: 'Build'
+  - task: GitHubPagesPublish@1
+    inputs:
+      docPath: "$(BUILD_SOURCESDIRECTORY)\\build\\web\\*"
+      branchname: 'gh-pages'
+      githubusername: $(github_username)
+      githubaccesstoken: $(github_pat)
+      repositoryname: $(Build.Repository.Name)
+      githubemail: $(github_email)
+      commitmessage: 'Automated release $(Build.BuildNumber)'
