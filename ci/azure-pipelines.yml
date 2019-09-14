@@ -18,7 +18,7 @@ steps:
     displayName: 'Build'
   - task: GitHubPagesPublish@1
     inputs:
-      docPath: "$(BUILD_SOURCESDIRECTORY)\\build\\web\\*"
+      docPath: $(System.DefaultWorkingDirectory)\\build\\web\\*
       branchname: 'gh-pages'
       githubaccesstoken: $(github_pat)
       githubusername: 'GuruDhanush'
