@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutters Demos',
+      title: 'Flutter WinUI',
       theme: ThemeData(
         accentColor: Colors.yellow,
         backgroundColor: Colors.white,
@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
         // See https://github.com/flutter/flutter/wiki/Desktop-shells#fonts
         fontFamily: 'Segoe',
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Pages'),
+      home: MyHomePage(title: 'Flutter WinUI'),
     );
   }
 }
@@ -68,17 +68,12 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
-  int _counter = 1;
   AnimationController controller;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   void initState() {
+    super.initState();
     controller =
         AnimationController(vsync: this, duration: Duration(milliseconds: 300));
   }

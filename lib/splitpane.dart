@@ -91,7 +91,7 @@ class _SplitPaneState extends State<SplitPane>
   final GlobalKey _flyoutKey = GlobalKey();
   final FocusNode focusNode = FocusNode();
 
-  int pageNum = 5;
+  int pageNum = 1;
 
   void _changePage(int page) {
     //times =  0;
@@ -213,7 +213,7 @@ class _SplitPaneState extends State<SplitPane>
             'Settings',
             style: Theme.of(context).textTheme.body1,
           ),
-          onTap: () => _changePage(5),
+          onTap: () => _changePage(6),
           hover: true,
         )
       ],
