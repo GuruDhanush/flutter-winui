@@ -20,8 +20,8 @@ steps:
     inputs:
       docPath: "$(BUILD_SOURCESDIRECTORY)\\build\\web\\*"
       branchname: 'gh-pages'
-      githubusername: $(github_username)
       githubaccesstoken: $(github_pat)
-      repositoryname: $(Build.Repository.Name)
+      githubusername: 'GuruDhanush'
+      repositoryname: 'flutter-winui'
       githubemail: $(github_email)
       commitmessage: 'Automated release $(Build.BuildNumber)'
